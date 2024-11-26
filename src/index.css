@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #0F172A;
+    --primary-light: #1E293B;
+    --accent: #3B82F6;
+    --accent-light: #60A5FA;
+    --success: #059669;
+    --warning: #D97706;
+    --error: #DC2626;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply antialiased text-gray-900 bg-gray-50;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-[--primary] text-white px-6 py-2 rounded-lg hover:bg-[--primary-light] transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply border border-[--primary] text-[--primary] px-6 py-2 rounded-lg hover:bg-gray-50 transition-colors;
+  }
+
+  .btn-accent {
+    @apply bg-[--accent] text-white px-6 py-2 rounded-lg hover:bg-[--accent-light] transition-colors;
+  }
+
+  .sidebar-transition {
+    @apply transition-[width,margin] duration-300 ease-in-out;
+  }
+
+  .content-transition {
+    @apply transition-[margin] duration-300 ease-in-out;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[--primary] to-[--accent];
+  }
+}
